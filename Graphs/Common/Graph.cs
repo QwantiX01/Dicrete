@@ -224,7 +224,8 @@ public class Graph
 
         bfsNumbers[value] = bfsCounter;
         skeleton.Enqueue((value, adjacencyList[value]));
-
+        visited.Add(value);
+        
         result.Add([
             bfsNumbers.First().Key.ToString(), bfsNumbers.First().Value.ToString(),
             string.Join(",", skeleton.Select(x => x.Item1.ToString()))

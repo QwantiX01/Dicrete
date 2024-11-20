@@ -20,11 +20,17 @@ graph.AddEdge(4, 5);
 graph.AddEdge(5, 6);
 graph.AddEdge(7, 8);
 
-var bfs = graph.Bfs(1);
-foreach (var bf in bfs)
-{
-    Console.WriteLine($"{bf.Key}, {bf.Value}");
-}
+// graph.AddEdge(1, 2);
+// graph.AddEdge(1, 3);
+// graph.AddEdge(1, 5);
+// graph.AddEdge(1, 7);
+// graph.AddEdge(2, 4);
+// graph.AddEdge(2, 7);
+// graph.AddEdge(4, 1);
+// graph.AddEdge(5, 6);
+// graph.AddEdge(6, 3);
+// graph.AddEdge(7, 2);
+// graph.AddEdge(7, 8);
 
 var menu = new Menu();
 
@@ -32,4 +38,5 @@ menu.AddOption("Рекурсивний пошук вглиб", () => { graph.Dfs
 menu.AddOption("Не рекурсивний пошук вглиб", () => { graph.DfsDebug(1); });
 menu.AddOption("Пошук вшир", () => { graph.BfsDebug(1); });
 
-menu.Display();
+while (true)
+    menu.Display();

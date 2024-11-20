@@ -12,7 +12,7 @@ class Program
         var menu = new Menu();
         menu.AddOption("Частина 1", First);
         menu.AddOption("Частина 2", Second);
-
+        menu.AddOption("Частина 3: Генерація сполучень у лексикографічному порядку", Third);
 
         while (true)
         {
@@ -52,5 +52,22 @@ class Program
             Console.WriteLine(string.Join(" ", array));
             array = GenPerm(array);
         }
+    }
+
+    static void Third()
+    {
+        Console.WriteLine("Введіть n (розмір множини)");
+        var n = (int)Input.GetNumber();
+        Console.WriteLine("Введіть k (розмір сполучення)");
+        var k = (int)Input.GetNumber();
+
+        // Початкове сполучення
+        var combination = Enumerable.Range(1, k).ToArray();
+        Console.WriteLine("Генеруємо всі сполучення у лексикографічному порядку:");
+
+        do
+        {
+            Console.WriteLine(string.Join(" ", combination));
+        } while (GenComb(combination, n, k));
     }
 }
